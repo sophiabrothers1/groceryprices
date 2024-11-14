@@ -2,6 +2,7 @@
 title: "Grocery Prices by Vendor"
 author: 
   - Sophia Brothers
+  - Bruce Zhang
 thanks: "Code and data are available at: [https://github.com/sophiabrothers1/groceryprices](https://github.com/sophiabrothers1/groceryprices)."
 date: today
 date-format: long
@@ -18,6 +19,8 @@ bibliography: references.bib
 The grocery market offers dynamic pricing across various vendors and product types, making it essential to understand patterns for consumer insights and economic analysis. This study examines grocery prices by vendor to find average price trends, using SQL for data extraction and R [@citeR] for visualization.
 
 # Data
+
+This data was obtained from an online source of grocery prices related data @citeHammer. The analysis made use of R Programming language @citeR, including packages dplyr @dplyr, tibble, @tibble, and ggplot2 @ggplot2. The dataset displays the price of different products for different vendors. The vendors include a series of grocery chains including Metro, Loblaws, Walmart, T&T, and a few more. 
 
 The dataset includes:
 
@@ -59,26 +62,28 @@ ggplot(data, aes(x = reorder(vendor, -most_expensive_count), y = most_expensive_
 
 ```
 
+\newpage
+
 # **Discussion**
 
 This study highlights observable trends in grocery prices by vendor but also underscores limitations due to the nature of observational data.
 
-## Loblaws and Metro are Pricier than other Grocery Chains
+## **Loblaws and Metro are Pricier than other Grocery Chains**
 
-write discussion here
+Loblaws and Metro are more expensive than other grocery chains based on the number of products that are most expensive at these chains. This can demonstrate real-world trends of pricing, as these chains are large and often located in urbanized regions. However, we cannot conclude a causation between location, size, and price. Many limitations of this paper highlighted below show that further research is needed to make meaningful, causal conclusions. 
 
 ## **Correlation vs. Causation**
 
-While we observe differences in pricing across vendors, these differences do not imply causative factors without further experimental controls. Vendors may set prices based on external market trends or supply chain factors not captured in this dataset.
+While we observe differences in pricing across vendors, these differences do not imply causative factors without further experimental controls. In order to conclude causation, it is important to have an experimental design that involves the manipulation of variables. This dataset is obtained based on observed price trends and does not invovle variable manipulation. Similarly, vendors may set prices based on external market trends or supply chain factors not captured in this dataset. Further data collection and analysis including variable manipulation must be done in order to conclude causation. 
 
 ## **Missing Data**
 
-Missing data is a common challenge in grocery datasets. For example, some vendors may not report product prices consistently, leading to potential biases in the average prices. Handling missing data effectively, such as by imputation or exclusion, is essential for future analyses.
+Missing data is a common challenge in grocery datasets. It is unlikely that every aspect of each data point is collected perfectly, especially in a grocery store setting where the main purpose is to sell products instead of data collection. For example, some vendors may not report product prices consistently, leading to potential biases in the average prices. Handling missing data effectively, such as by imputation or exclusion, is essential for future analyses.
 
 ## **Sources of Bias**
 
-Several potential biases may influence these results. Vendor pricing strategies vary based on store policies, regional preferences, or consumer behavior. Furthermore, online-only data may exclude regional in-store promotions, limiting the generalizability of our findings.
+Several potential biases may influence these results. Vendor pricing strategies vary based on store policies, regional preferences, or consumer behavior. The pricing may be influenced by the abundance of the grocery chain in specific locations. For example, more urbanized regions may have more larger grocery chain stores and also have higher pricing compared to rural areas. Furthermore, online-only data may exclude regional in-store promotions and other timnely changes in pricing, limiting the generalizability of our findings.
 
 # **Conclusion**
 
-Future research could expand on this analysis by incorporating additional data on consumer preferences and regional factors.
+The data in this analysis present a general idea of the pricing in grocery chains, summarizing the information on which chains have the most expensive pricing. The analysis breaks down the number of most expensive products by grocery chain, offering a broad overview of which chains have the highest occurence of being the most expensive. Future research could expand on this analysis by incorporating additional data on consumer preferences and regional factors.
