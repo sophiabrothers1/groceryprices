@@ -27,6 +27,8 @@ By examining data from Canadian grocery sectors [@citeHammer], including Loblaws
 
 The structure of this paper is organized as follows: @sec-data discusses data sources, SQL data preparation, and visualization methodologies. The main findings are presented in @sec-results, where Loblaws and Metro are shown to lead as the most expensive chains. @sec-discussion addresses data limitations, such as missing values and potential observational biases.
 
+\newpage
+
 # Data  {#sec-data}
 
 This data was obtained from an online source of grocery prices related data [@citeHammer]. The analysis made use of R Programming language [@citeR], including packages dplyr [@dplyr], tibble [@tibble], and ggplot2 [@ggplot2]. The dataset displays the price of different products for different vendors. The vendors include a series of grocery chains including Metro, Loblaws, Walmart, T&T, and a few more.
@@ -39,7 +41,7 @@ The dataset includes:
 
 \- **Current Price**: The price of the product at the time the data was collected, reflecting real-time pricing and enabling analysis of cost variations across vendors.
 
-The data visualized in Figure @fig-vendorfreq highlights the overall frequency of vendors appearing in the dataset, with Metro and Loblaws showing a dominant presence. This suggests a trend where these two vendors not only stock a wide range of products but also maintain higher prices across multiple categories. Furthermore, @fig-price illustrates the distribution of product prices by vendor, focusing on items priced under \$250. The distribution charts reveal that Metro and Loblaws consistently have a higher density of products in the upper price ranges compared to competitors like Walmart, NoFrills, and T&T.
+The data visualized in @fig-vendorfreq highlights the overall frequency of vendors appearing in the dataset, with Metro and Loblaws showing a dominant presence. This suggests a trend where these two vendors not only stock a wide range of products but also maintain higher prices across multiple categories. Furthermore, @fig-price illustrates the distribution of product prices by vendor, focusing on items priced under \$250. The distribution charts reveal that Metro and Loblaws consistently have a higher density of products in the upper price ranges compared to competitors like Walmart, NoFrills, and T&T.
 
 ```{r}
 #| label: fig-vendorfreq
@@ -102,6 +104,8 @@ ggplot(filtered_data, aes(x = current_price)) +
   labs(title = "Distribution of Prices by Vendor (Under $250)", x = "Price", y = "Frequency") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+\newpage
 
 # Results  {#sec-results}
 
