@@ -19,17 +19,17 @@ number-sections: true
 bibliography: references.bib
 ---
 
-# **Introduction**
+# Introduction
 
-The grocery market is marked by dynamic pricing across various vendors and product types, making it essential to understand price patterns for consumer insight and economic analysis. This paper investigates grocery prices across major retail chains, focusing on the most expensive vendors to highlight disparities in pricing strategies. Using SQL for data extraction and cleaning, combined with R[@citeR] for visualization, this analysis explores average price trends and identifies specific products and chains that command the highest prices.
+The grocery market is marked by dynamic pricing across various vendors and product types, making it essential to understand price patterns for consumer insight and economic analysis. This paper investigates grocery prices across major retail chains, focusing on the most expensive vendors to highlight disparities in pricing strategies. Using SQL for data extraction and cleaning, combined with R [@citeR] for visualization, this analysis explores average price trends and identifies specific products and chains that command the highest prices.
 
-By examining data from Canadian grocery sectors[@citehammar], including Loblaws and Metro, this study reveals significant insights into the grocery market's pricing structure. The results show that Loblaws and Metro consistently rank as the priciest options for a wide array of products, revealing potential factors behind these higher prices, including brand reputation and regional market influence. Through an analysis of price distributions across chains, this paper provides a valuable understanding of cost variability in the grocery industry.
+By examining data from Canadian grocery sectors [@citeHammer], including Loblaws and Metro, this study reveals significant insights into the grocery market's pricing structure. The results show that Loblaws and Metro consistently rank as the priciest options for a wide array of products, revealing potential factors behind these higher prices, including brand reputation and regional market influence. Through an analysis of price distributions across chains, this paper provides a valuable understanding of cost variability in the grocery industry.
 
-The structure of this paper is organized as follows: Section @sec-data discusses data sources, SQL data preparation, and visualization methodologies. The main findings are presented in Section @sec-results, where Loblaws and Metro are shown to lead as the most expensive chains. Section @sec-discussion addresses data limitations, such as missing values and potential observational biases, while the appendix in Section @sec-app includes additional information and resources used for this analysis.
+The structure of this paper is organized as follows: @sec-data discusses data sources, SQL data preparation, and visualization methodologies. The main findings are presented in @sec-results, where Loblaws and Metro are shown to lead as the most expensive chains. @sec-discussion addresses data limitations, such as missing values and potential observational biases.
 
-# **Data**
+# Data  {#sec-data}
 
-This data was obtained from an online source of grocery prices related data @citeHammer. The analysis made use of R Programming language @citeR, including packages dplyr @dplyr, tibble, @tibble, and ggplot2 @ggplot2. The dataset displays the price of different products for different vendors. The vendors include a series of grocery chains including Metro, Loblaws, Walmart, T&T, and a few more.
+This data was obtained from an online source of grocery prices related data [@citeHammer]. The analysis made use of R Programming language [@citeR], including packages dplyr [@dplyr], tibble [@tibble], and ggplot2 [@ggplot2]. The dataset displays the price of different products for different vendors. The vendors include a series of grocery chains including Metro, Loblaws, Walmart, T&T, and a few more.
 
 The dataset includes:
 
@@ -39,9 +39,8 @@ The dataset includes:
 
 \- **Current Price**: The price of the product at the time the data was collected, reflecting real-time pricing and enabling analysis of cost variations across vendors.
 
-<<<<<<< HEAD
-# **Results**
-=======
+The data visualized in Figure @fig-vendorfreq highlights the overall frequency of vendors appearing in the dataset, with Metro and Loblaws showing a dominant presence. This suggests a trend where these two vendors not only stock a wide range of products but also maintain higher prices across multiple categories. Furthermore, @fig-price illustrates the distribution of product prices by vendor, focusing on items priced under \$250. The distribution charts reveal that Metro and Loblaws consistently have a higher density of products in the upper price ranges compared to competitors like Walmart, NoFrills, and T&T.
+
 ```{r}
 #| label: fig-vendorfreq
 #| fig-cap: This bar graph shows the frequency in which different vendors appear in the dataset
@@ -49,7 +48,6 @@ The dataset includes:
 #| eval: true
 #| warning: false
 #| message: false
->>>>>>> origin/main
 
 library(ggplot2)
 library(dplyr)
@@ -65,7 +63,7 @@ vendor_count <- data %>%
 
 # bar plot for vendor frequencies
 ggplot(vendor_count, aes(x = vendor, y = count)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
+  geom_bar(stat = "identity", fill = "darkgrey") +
   theme_minimal() +
   labs(title = "Frequency of Each Vendor", x = "Vendor", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -105,9 +103,9 @@ ggplot(filtered_data, aes(x = current_price)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-# Results
+# Results  {#sec-results}
 
-Data manipulation and aggregation were conducted in SQL, calculating average product prices by vendor. @fig-vendors shows that for products that are carried by ≥ 3 vendors, Metro has the most expensive price 28609 times. Loblaws follows shortly behind at 27561.
+Data analysis conducted using SQL and R revealed notable trends in grocery pricing across various vendors. As shown in @fig-vendors, Metro and Loblaws consistently emerged as the vendors with the highest counts of most expensive products. Specifically, Metro was identified as the most expensive vendor for products carried by three or more vendors a total of 28,609 times, while Loblaws followed closely behind with 27,561 occurrences. This pattern reinforces the observation that Metro and Loblaws implement premium pricing strategies, potentially targeting consumers who prioritize brand reputation and convenience over cost. Overall, the visualizations and aggregated data point to a clear differentiation in pricing strategies among grocery vendors, with Metro and Loblaws positioned as the premium-priced options in the market.
 
 ```{r}
 #| label: fig-vendors
@@ -124,7 +122,7 @@ library(here)
 data <- read.csv(here("data", "analysis_data", "average_prices_by_vendor.csv"))
 
 ggplot(data, aes(x = reorder(vendor, -most_expensive_count), y = most_expensive_count)) +
-  geom_bar(stat = "identity", fill = "grey") +
+  geom_bar(stat = "identity", fill = "darkgrey") +
   labs(
     title = "Number of Times Each Vendor is the Most Expensive",
     x = "Vendor",
@@ -134,12 +132,11 @@ ggplot(data, aes(x = reorder(vendor, -most_expensive_count), y = most_expensive_
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
-
 ```
 
 \newpage
 
-# **Discussion**
+# **Discussion**  {#sec-discussion}
 
 The analysis of grocery prices across vendors reveals clear trends, with Loblaws and Metro consistently ranking as the most expensive chains for a variety of products. This finding suggests that these vendors may follow premium pricing strategies, potentially due to factors like brand reputation and market positioning. The price distributions show that, while there is variation among vendors, Loblaws and Metro maintain higher average prices across a broad range of items, setting them apart from competitors. These trends highlights grocery market pricing strategies, revealing how certain vendors target specific consumer demographics and shopping habits.
 
@@ -159,7 +156,7 @@ Missing data is a common challenge in grocery datasets. It is unlikely that ever
 
 Several potential biases may influence these results. Vendor pricing strategies vary based on store policies, regional preferences, or consumer behavior. The pricing may be influenced by the abundance of the grocery chain in specific locations. For example, more urbanized regions may have more larger grocery chain stores and also have higher pricing compared to rural areas. Furthermore, online-only data may exclude regional in-store promotions and other timnely changes in pricing, limiting the generalizability of our findings.
 
-# **Conclusion**
+# **Conclusion**  {#sec-conclusion}
 
 The data in this analysis present a general idea of the pricing in grocery chains, summarizing the information on which chains have the most expensive pricing. The analysis breaks down the number of most expensive products by grocery chain, offering a broad overview of which chains have the highest occurence of being the most expensive. Future research could expand on this analysis by incorporating additional data on consumer preferences and regional factors.
 
