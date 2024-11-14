@@ -1,3 +1,12 @@
+#### Preamble ####
+# Purpose: create csv for analysis data
+# Author: Sophia Brothers
+# Date: November 14th, 2024
+# Contact: sophia.brothers@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: The 'DBI', 'RSQLite', and 'here' packages must be installed
+# Any other information needed? Make sure you are in the `groceryprices` rproj
+
 # Load libraries
 library(DBI)
 library(RSQLite)

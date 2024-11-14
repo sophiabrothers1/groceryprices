@@ -1,3 +1,13 @@
+#### Preamble ####
+# Purpose: Query for data analysis of interest
+# Author: Sophia Brothers
+# Date: November 14th, 2024
+# Contact: sophia.brothers@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: N/A
+# Any other information needed? Make sure you are in the `groceryprices` rproj
+
+
 WITH product_vendor_count AS (
     SELECT 
         p.product_name,

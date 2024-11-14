@@ -1,3 +1,12 @@
+#### Preamble ####
+# Purpose: Test the simulated grocery price data
+# Author: Bruce Zhang
+# Date: November 14th, 2024
+# Contact: brucejc.zhang@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: The 'dplyr', 'tibble', and 'ggplot2' packages must be installed
+# Any other information needed? Make sure you are in the `groceryprices` rproj
+
 #### Workspace setup ####
 library(dplyr)
 library(tibble)
