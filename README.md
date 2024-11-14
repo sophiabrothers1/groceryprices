@@ -16,4 +16,4 @@ The repo is structured as:
 -   `scripts` contains the R scripts used to simulate, clean, and test data.
 
 ## LLM Usage
-This repository uses generative AI ChatGPT for guidance of data simulation and test simulation. 
+This repository uses generative AI ChatGPT for guidance of data simulation and test simulation. The full chat history can be found in other/llm/usage.txt.
