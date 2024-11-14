@@ -43,7 +43,7 @@ The data visualized in Figure @fig-vendorfreq highlights the overall frequency o
 
 ```{r}
 #| label: fig-vendorfreq
-#| fig-cap: This bar graph shows the frequency in which different vendors appear in the dataset
+#| fig-cap: Shows the frequency in which different vendors appear in the dataset
 #| echo: false
 #| eval: true
 #| warning: false
@@ -71,7 +71,7 @@ ggplot(vendor_count, aes(x = vendor, y = count)) +
 
 ```{r}
 #| label: fig-price
-#| fig-cap: This bar graph shows the distribution of price by vendor
+#| fig-cap: Visualizes the distribution of price by vendor
 #| echo: false
 #| eval: true
 #| warning: false
@@ -96,7 +96,7 @@ filtered_data <- combined_data %>%
 
 # plot distribution of price by vendor
 ggplot(filtered_data, aes(x = current_price)) +
-  geom_histogram(binwidth = 10, fill = "steelblue", color = "black", alpha = 0.7) +
+  geom_histogram(binwidth = 10, fill = "grey", color = "black", alpha = 0.7) +
   facet_wrap(~ vendor) +
   theme_minimal() +
   labs(title = "Distribution of Prices by Vendor (Under $250)", x = "Price", y = "Frequency") +
@@ -144,7 +144,7 @@ The analysis of grocery prices across vendors reveals clear trends, with Loblaws
 
 Loblaws and Metro are more expensive than other grocery chains based on the number of products that are most expensive at these chains. This can demonstrate real-world trends of pricing, as these chains are large and often located in urbanized regions. However, we cannot conclude a causation between location, size, and price. Many limitations of this paper highlighted below show that further research is needed to make meaningful, causal conclusions.
 
-## **Correlation vs. Causation**
+## Correlation vs. Causation
 
 While we observe differences in pricing across vendors, these differences do not imply causative factors without further experimental controls. In order to conclude causation, it is important to have an experimental design that involves the manipulation of variables. This dataset is obtained based on observed price trends and does not invovle variable manipulation. Similarly, vendors may set prices based on external market trends or supply chain factors not captured in this dataset. Further data collection and analysis including variable manipulation must be done in order to conclude causation.
 
