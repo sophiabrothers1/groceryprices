@@ -87,3 +87,8 @@ Several potential biases may influence these results. Vendor pricing strategies 
 # **Conclusion**
 
 The data in this analysis present a general idea of the pricing in grocery chains, summarizing the information on which chains have the most expensive pricing. The analysis breaks down the number of most expensive products by grocery chain, offering a broad overview of which chains have the highest occurence of being the most expensive. Future research could expand on this analysis by incorporating additional data on consumer preferences and regional factors.
+
+\newpage
+# References
+
+
