@@ -32,7 +32,7 @@ The dataset includes:
 
 # Measurement and Data Preparation
 
-Data manipulation and aggregation were conducted in SQL, calculating average product prices by vendor. @fig-vendors shows that for products that are carried by \>= 3 vendors, Metro has the most expensive price 28609 times. Loblaws follows shortly behind at 27561.
+Data manipulation and aggregation were conducted in SQL, calculating average product prices by vendor. @fig-vendors shows that for products that are carried by ≥ 3 vendors, Metro has the most expensive price 28609 times. Loblaws follows shortly behind at 27561.
 
 ```{r}
 #| label: fig-vendors
