@@ -146,7 +146,7 @@ ggplot(data, aes(x = reorder(vendor, -most_expensive_count), y = most_expensive_
 
 The analysis of grocery prices across vendors reveals clear trends, with Loblaws and Metro consistently ranking as the most expensive chains for a variety of products. This finding suggests that these vendors may follow premium pricing strategies, potentially due to factors like brand reputation and market positioning. The price distributions show that, while there is variation among vendors, Loblaws and Metro maintain higher average prices across a broad range of items, setting them apart from competitors. These trends highlights grocery market pricing strategies, revealing how certain vendors target specific consumer demographics and shopping habits.
 
-## **Loblaws and Metro are Pricier than other Grocery Chains**
+## Loblaws and Metro are Pricier than other Grocery Chains
 
 Loblaws and Metro are more expensive than other grocery chains based on the number of products that are most expensive at these chains. This can demonstrate real-world trends of pricing, as these chains are large and often located in urbanized regions. However, we cannot conclude a causation between location, size, and price. Many limitations of this paper highlighted below show that further research is needed to make meaningful, causal conclusions.
 
@@ -154,11 +154,11 @@ Loblaws and Metro are more expensive than other grocery chains based on the numb
 
 While we observe differences in pricing across vendors, these differences do not imply causative factors without further experimental controls. In order to conclude causation, it is important to have an experimental design that involves the manipulation of variables. This dataset is obtained based on observed price trends and does not invovle variable manipulation. Similarly, vendors may set prices based on external market trends or supply chain factors not captured in this dataset. Further data collection and analysis including variable manipulation must be done in order to conclude causation.
 
-## **Missing Data**
+## Missing Data
 
 Missing data is a common challenge in grocery datasets. It is unlikely that every aspect of each data point is collected perfectly, especially in a grocery store setting where the main purpose is to sell products instead of data collection. For example, some vendors may not report product prices consistently, leading to potential biases in the average prices. Handling missing data effectively, such as by imputation or exclusion, is essential for future analyses.
 
-## **Sources of Bias**
+## Sources of Bias
 
 Several potential biases may influence these results. Vendor pricing strategies vary based on store policies, regional preferences, or consumer behavior. The pricing may be influenced by the abundance of the grocery chain in specific locations. For example, more urbanized regions may have more larger grocery chain stores and also have higher pricing compared to rural areas. Furthermore, online-only data may exclude regional in-store promotions and other timnely changes in pricing, limiting the generalizability of our findings.
 
